@@ -35,6 +35,7 @@ public class TestReverseInteger {
             reversedInt = reversedInt * 10 + modVal;
             temp = temp / 10;
         }
+
         System.out.println(reversedInt);
     }
 }
