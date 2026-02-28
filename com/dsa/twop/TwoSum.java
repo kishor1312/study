@@ -1,4 +1,4 @@
-package com.twop;
+package com.dsa.twop;
 
 // find two numbers from given array having sum equal to given target sum
 // using two pointer
