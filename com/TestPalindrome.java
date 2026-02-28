@@ -12,7 +12,6 @@ public class TestPalindrome {
         int j = i + 1;
         while (i < j && j <= inputStr.length()) {
             String subStr = inputStr.substring(i, j);
-            System.out.println(subStr+"_"+i+""+j);
 
             if (j == inputStr.length()) {
                 i++;
@@ -24,7 +23,7 @@ public class TestPalindrome {
             j++;
         }
         System.out.println("checking list: "+palindromes.size());
-        palindromes.forEach(s -> System.out.println(s));
+        palindromes.forEach(System.out :: println);
     }
 
     private static boolean isThisPalindrome(String substring) {
