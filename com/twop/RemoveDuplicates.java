@@ -1,7 +1,6 @@
-package com;
+package com.twop;
 
 import java.util.Arrays;
-import java.util.List;
 
 // Remove duplicates from given sorted array
 // using two pointer
