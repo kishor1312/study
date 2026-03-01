@@ -22,7 +22,7 @@ public class SortColorsDnf {
             } else if(nums[mid] == 1) {
                 mid++;
             } else {
-                swapValues(nums, mid, low);
+                swapValues(nums, mid, high);
                 high--;
             }
         }
