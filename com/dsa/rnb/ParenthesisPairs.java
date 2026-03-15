@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ParenthesisPairs {
     public static void main(String[] args) {
-        int totalParenthesisPairs = 3;
+        int totalParenthesisPairs = 2;
 
         getAllWelformedCombinations(totalParenthesisPairs, 0, 0, new StringBuilder(), new ArrayList<String>());
     }
