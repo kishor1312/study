@@ -1,4 +1,4 @@
-package com.dsa.rec;
+package com.dsa.rnb;
 
 public class FactorialOfGivenNumber {
     public static void main(String[] args) {

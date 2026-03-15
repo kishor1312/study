@@ -1,4 +1,4 @@
-package com.dsa.rec;
+package com.dsa.rnb;
 
 import java.util.Arrays;
 import java.util.Scanner;
