@@ -7,27 +7,28 @@ public class StringReversal {
     public static void main(String[] args) {
         inputStr = new Scanner(System.in).nextLine();
 
-        //copy string in charArray
-        char[] arr = inputStr.toCharArray();
-
         //pass initial arguments
-        reverseArr(arr, 0, arr.length -1);
+        String reversedStr = reverseStr(inputStr, 0, inputStr.length()-1);
 
         //print final result
-        System.out.println("reverse of given string is : "+String.copyValueOf(arr));
+        System.out.println("reverse of given string is : "+reversedStr);
     }
 
-    private static void reverseArr(char[] arr, int left, int right) {
-        //exit condition
-        if(left >=right)
-            return;
+    private static String reverseStr(String str, int left, int right) {
+        // base cases
+        int length = right - left + 1;
+        if (length <= 0) {
+            return "";
+        }
+        if (length == 1) {
+            return String.valueOf(str.charAt(left));
+        }
 
-        // logic
-        char temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
-
-        //recursion
-        reverseArr(arr, ++left, --right);
+        char charAtLeft = str.charAt(left);
+        char charAtRight = str.charAt(right);
+        return new StringBuilder(String.valueOf(charAtRight))
+                .append(reverseStr(str, left + 1, right - 1))
+                .append(String.valueOf(charAtLeft))
+                .toString();
     }
 }
