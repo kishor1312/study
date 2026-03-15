@@ -1,5 +1,7 @@
 package com.dsa.tree;
 
+import java.util.*;
+
 public class Traversal {
     public static void main(String[] args) {
 
@@ -21,16 +23,44 @@ public class Traversal {
         node2.right = node6;
 
         //traverse PreOrder
-        System.out.println("Printing PreOrder: ");
+        System.out.println("\n Printing PreOrder: ");
         printPreOrder(root);
 
         //traverse InOrder
-        System.out.println("Printing InOrder: ");
+        System.out.println("\n Printing InOrder: ");
         printInOrder(root);
 
         //traverse PostOrder
-        System.out.println("Printing PostOrder: ");
+        System.out.println("\n Printing PostOrder: ");
         printPostOrder(root);
+
+        //traverse levelOrder
+        System.out.println("\n Printing Level ordered traversal: ");
+        printLevelOrder(root);
+    }
+
+    private static void printLevelOrder(Node root) {
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        int levelCounter = 0;
+        while (!queue.isEmpty()) {
+            levelCounter++;
+            List<Node> tmp = new ArrayList<Node>();
+            int noOfNodesAtLevel = queue.size();
+            System.out.println("Printing elements at level : "+levelCounter);
+            while(noOfNodesAtLevel > 0) {
+                Node n = queue.poll();
+                tmp.add(n);
+                if (n.left != null) {
+                    queue.add(n.left);
+                }
+                if (n.right != null) {
+                    queue.add(n.right);
+                }
+                noOfNodesAtLevel--;
+            }
+            tmp.forEach(node -> {System.out.println(node.val);});
+        }
     }
 
     private static void printPostOrder(Node n) {
