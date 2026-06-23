@@ -7,6 +7,7 @@ public class TwoSum {
         int[] input = new int[]{1, 2, 3, 5, 7};
         int targetSum = 12;
 
+        /*
         for (int i=0, j=input.length-1; j>i;) {
             int sum = input[i] + input[j];
             if (sum < targetSum) {
@@ -16,6 +17,21 @@ public class TwoSum {
             } else if (sum == targetSum){
                 System.out.println(input[i] + "_" + input[j]);
                 break;
+            }
+        }
+        */
+
+        int i=0;
+        int j=input.length-1;
+        while(i<j) {
+            int sum = input[i] + input[j];
+            if(sum == targetSum){
+                System.out.println(input[i] + "_" + input[j]);
+                break;
+            } else if(sum < targetSum){
+                i++;
+            } else {
+                j--;
             }
         }
     }

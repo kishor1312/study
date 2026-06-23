@@ -2,8 +2,8 @@ package com.misc;
 
 public class TestReverseInteger {
 
-    // basic with mutating original value
-    /*
+    // basic without mutating original value
+
     public static void main(String[] args) {
         int inputInt = 323021;
         int reducedInt = 0;
@@ -20,11 +20,13 @@ public class TestReverseInteger {
             reversedInt = reversedInt * 10 + modVal;
         } while (reducedInt > 10);
         System.out.println(reversedInt * 10 + reducedInt);
-    } */
+    }
 
-    //with mutation of original value
+    //without mutation of original value
+    /*
     public static void main(String[] args) {
         int inputInt = 12340;
+
         int temp = inputInt;
         int reversedInt = 0;
         while(temp != 0) {
@@ -35,4 +37,5 @@ public class TestReverseInteger {
 
         System.out.println(reversedInt);
     }
+    */
 }

@@ -45,12 +45,12 @@ public class Traversal {
         int levelCounter = 0;
         while (!queue.isEmpty()) {
             levelCounter++;
-            List<Node> tmp = new ArrayList<Node>();
+            List<String> tmp = new ArrayList<String>();
             int noOfNodesAtLevel = queue.size();
             System.out.println("Printing elements at level : "+levelCounter);
             while(noOfNodesAtLevel > 0) {
                 Node n = queue.poll();
-                tmp.add(n);
+                tmp.add(n.val);
                 if (n.left != null) {
                     queue.add(n.left);
                 }
@@ -59,7 +59,7 @@ public class Traversal {
                 }
                 noOfNodesAtLevel--;
             }
-            tmp.forEach(node -> {System.out.println(node.val);});
+            tmp.forEach(System.out::println);
         }
     }
 
